@@ -1,106 +1,614 @@
 <template>
-  <div>
-    <div class="tab">
-      <div class="tab-item">
-        <router-link to="/msite/loho" replace>乐活殿堂</router-link>
+  <div class="news">
+
+    <mt-navbar :class="totop?'fixed':'mint-navbar'" v-model="selected">
+      <div style="width: 50px;margin-top: 18px" >
+         <span class="item_icon">
+        <i class="iconfont icon-sousuo" style="font-size: 22px"></i>
+      </span>
       </div>
-      <div class="tab-item">
-        <router-link to="/msite/targetProcess" replace>目标进度</router-link>
+      <mt-tab-item id="1"><p class="f10">乐活殿堂</p></mt-tab-item>
+      <mt-tab-item id="2"><p class="f10">目标进度</p></mt-tab-item>
+      <mt-tab-item id="3"><p class="f10">正能量区</p></mt-tab-item>
+      <div style="width: 50px;margin-top:15px" >
+         <span class="item_icon" >
+        <i class="iconfont icon-icon_add" ></i>
+      </span>
       </div>
-      <div class="tab-item">
-        <router-link to="/msite/zhengnengliang" replace>正能量区</router-link>
-      </div>
-    </div>
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
+    </mt-navbar>
+
+    <!-- tab-container -->
+    <mt-tab-container class="container" v-model="selected">
+      <mt-tab-container-item class="container-item" id="1">
+        <div style="margin-left: 20px">
+           乐活殿堂
+        </div>
+      </mt-tab-container-item>
+      <mt-tab-container-item class="container-item" id="2">
+        <div style="display: flex">
+          <div >
+            <img src="../../pages/MyPlance/images/profileImg.jpeg" class="content-img" style="border-radius:50%;width:50px;height:50px
+;margin-left: 20px;" />
+          </div>
+          <div style="width: 240px">
+            <span style="display:block;line-height:25px;margin-left: 10px;font-weight: bold">天空的湛蓝</span>
+            <span style="display:block;line-height:25px;margin-left: 10px;color: deepskyblue">境界：[圣]九色本源</span>
+          </div>
+          <div style="display: flex;margin-top: 10px">
+            <img src="../../pages/MSite/images/11.png" class="content-img" style="width: 15px;height: 15px;margin-right: 5px" />
+            <img src="../../pages/MSite/images/神.png" class="content-img" style="width: 15px;height: 15px;margin-right: 5px" />
+            <img src="../../pages/MSite/images/仙.png" class="content-img" style="width: 15px;height: 15px" />
+          </div>
+
+        </div>
+        <div style="border: .5px solid #ddd;text-align: left;margin-top: 10px"></div>
+          <div style="margin: 15px;">
+            <span style="color:#000000;font-weight: bold">【专业】建筑设计专业整理(2013年第四季度目标)</span>
+            <span style="color:#AAAAAA;font-size:12px">（进度:2）</span>
+            <span style="display:block;line-height:25px;margin-top: 12px">今天工作的事情真多，真杂，晚上和李哥打完乒乓球，在办公室看了半小时的《建筑外里面风格初步整理和案例》
+        参考，算是一个巩固，做了思维导图笔记，建筑风格按古典和现代来分，古典风格含法国风格（讲究对称布局，有柱廊）
+        ，宝瓶栏杆，雕花及线条，八角窗等元素
+        今天的目标完成！加油!</span>
+            <div style="margin-top: 10px">
+              <span style="color:#00BFFF;font-size:14px;">2013-11-19 23:44:33</span>
+              <span style="font-size:14px;float: right;margin-right: 10px">
+            <img src="../../components/NewProgress/images/点赞（彩色）.png"  style="width:16px;" />4
+            <img src="../../components/NewProgress/images/回复（彩色）.png"  style="width:14px;" />5
+          </span>
+            </div>
+          </div>
+        <div style="border:2px solid #ddd;text-align: left;margin-top: 10px"></div>
+
+        <div style="display: flex;margin-top: 20px">
+          <div >
+            <img src="../../pages/MSite/images/test1.png" class="content-img" style="border-radius:50%;width:50px;height:50px
+;margin-left: 20px;" />
+          </div>
+          <div style="width: 240px">
+            <span style="display:block;line-height:25px;margin-left: 10px;font-weight: bold">蔚蓝色调</span>
+            <span style="display:block;line-height:25px;margin-left: 10px;color: deepskyblue">境界：[凡]开光</span>
+          </div>
+          <div style="display: flex">
+            <img src="../../pages/MSite/images/8.png" style="width: 15px;height: 15px;margin-right: 5px;margin-top: 10px" />
+          </div>
+
+        </div>
+        <div style="border: .5px solid #ddd;text-align: left;margin-top: 10px"></div>
+        <div style="margin: 15px;">
+          <span style="color:#000000;font-weight: bold">【兴趣】学习编曲音乐制作</span>
+          <span style="color:#AAAAAA;font-size:12px">（进度:8）</span>
+          <span style="display:block;line-height:25px;margin-top: 12px">
+           今晚和挚友杨明重新谈起音乐，发现这个爱好无论如何不能丢掉，杨明最近在网上报了一个编曲学习班，收获很大，听了他的
+          编曲小样，的确不是我们那个时候在学校编的水平，故而又激发了一份兴趣，希望和杨明，还有静伟，我们仨能够重新并肩走在
+          音乐的路上，实现我们共同的梦想。
+        </span>
+          <div style="margin-top: 10px">
+            <span style="color:#00BFFF;font-size:14px;">2013-11-19 0:44:33</span>
+            <span style="font-size:14px;float: right;margin-right: 10px">
+            1<img src="../../components/NewProgress/images/点赞（彩色）.png"  style="width:16px;" />
+            2<img src="../../components/NewProgress/images/回复（彩色）.png"  style="width:14px;" />
+          </span>
+          </div>
+
+        </div>
+        <div style="border:2px solid #ddd;text-align: left;margin-top: 10px"></div>
+
+        <div style="display: flex;margin-top: 20px">
+          <div >
+            <img src="../../pages/MyPlance/images/profileImg.jpeg" class="content-img" style="border-radius:50%;width:50px;height:50px
+;margin-left: 20px;" />
+          </div>
+          <div style="width: 240px">
+            <span style="display:block;line-height:25px;margin-left: 10px;font-weight: bold">天空的湛蓝</span>
+            <span style="display:block;line-height:25px;margin-left: 10px;color: deepskyblue">境界：[圣]九色本源</span>
+          </div>
+          <div style="display: flex">
+            <img src="../../pages/MSite/images/11.png" class="content-img" style="width: 15px;height: 15px;margin-right: 5px" />
+            <img src="../../pages/MSite/images/神.png" class="content-img" style="width: 15px;height: 15px;margin-right: 5px" />
+            <img src="../../pages/MSite/images/仙.png" class="content-img" style="width: 15px;height: 15px" />
+          </div>
+
+        </div>
+        <div style="border: .5px solid #ddd;text-align: left;margin-top: 10px"></div>
+        <div style="margin: 15px;">
+          <span style="color:#000000;font-weight: bold">【专业】建筑设计专业整理(2013年第四季度目标)</span>
+          <span style="color:#AAAAAA;font-size:12px">（进度:2）</span>
+          <span style="display:block;line-height:25px;margin-top: 12px">今天工作的事情真多，真杂，晚上和李哥打完乒乓球，在办公室看了半小时的《建筑外里面风格初步整理和案例》
+        参考，算是一个巩固，做了思维导图笔记，建筑风格按古典和现代来分，古典风格含法国风格（讲究对称布局，有柱廊）
+        ，宝瓶栏杆，雕花及线条，八角窗等元素
+        今天的目标完成！加油!</span>
+          <div style="margin-top: 10px">
+            <span style="color:#00BFFF;font-size:14px;">2013-11-19 23:44:33</span>
+            <span style="font-size:14px;float: right;margin-right: 10px">
+            <img src="../../components/NewProgress/images/点赞（彩色）.png"  style="width:16px;" />4
+            <img src="../../components/NewProgress/images/回复（彩色）.png"  style="width:14px;" />5
+          </span>
+          </div>
+        </div>
+        <div style="border:2px solid #ddd;text-align: left;margin-top: 10px"></div>
+      </mt-tab-container-item>
+      <mt-tab-container-item class="container-item" id="3">
+          <div style="text-align: center">
+      <span>
+         <span style="margin-right: 40px">
+        <img src="../../pages/MSite/images/阳光美文图标.png" style="width: 45px" />
+      </span >
+      <span style="margin-right: 40px">
+        <img src="../../pages/MSite/images/效能管理图标.png" style="width: 45px" />
+      </span>
+      <span style="margin-right: 40px">
+        <img src="../../pages/MSite/images/卓越品质图标.png" style="width: 45px" />
+      </span>
+      <span>
+        <img src="../../pages/MSite/images/思维观念图标.png" style="width: 45px" />
+      </span>
+    </span>
+          </div>
+          <div style="text-align: center;margin-bottom: 20px;margin-top: 5px">
+            <h2 class="content-title"  style="font-size:40%;color:#000000;">
+        <span style="">
+            <span style="margin-left:-2px">阳光美文</span>
+          </span>
+              <span style="margin-left: 40px">
+            <span style="">效能管理</span>
+          </span>
+              <span style="margin-left: 40px">
+            <span style="margin-left:-5px">卓越品质</span>
+          </span>
+              <span style="margin-left: 40px">
+            <span style="">思维观念</span>
+          </span>
+            </h2>
+
+          </div>
+
+          <div style="margin-top:10px;text-align: center">
+      <span>
+         <span style="margin-right: 40px">
+        <img src="../../pages/MSite/images/公益慈善图标.png" style="width: 45px" />
+      </span >
+      <span style="margin-right: 40px">
+        <img src="../../pages/MSite/images/书籍推荐图标.png" style="width: 45px" />
+      </span>
+      <span style="margin-right: 40px">
+        <img src="../../pages/MSite/images/励志音乐图标.png" style="width: 45px" />
+      </span>
+      <span>
+        <img src="../../pages/MSite/images/登陆注册.png" style="width: 45px" />
+      </span>
+    </span>
+          </div>
+          <div style="text-align: center;margin-bottom: 20px;margin-top: 5px">
+            <h2 class="content-title"  style="font-size:40%;color:#000000;">
+        <span style="">
+            <span style="margin-left:-2px">公益慈善</span>
+          </span>
+              <span style="margin-left: 40px">
+            <span style="">书籍推荐</span>
+          </span>
+              <span style="margin-left: 40px">
+            <span style="margin-left:-5px">励志音乐</span>
+          </span>
+              <span style="margin-left: 40px">
+            <span style="">登陆注册</span>
+          </span>
+            </h2>
+          </div>
+
+
+        <div style="border: 4px solid #ddd;text-align: left;margin-top: 10px">
+        </div>
+        <div >
+        <div style="margin-top: 25px;margin-left: 25px">
+          <span style="color:#66FFFF;font-size: 12px;background-color: #CCCC66">阳光美文</span>
+        </div>
+        <div >
+          <span style="display:block;line-height:25px;margin-top: 12px;margin-left: 25px">"别骂年轻人，中年人比较怂"</span>
+          <div id="picture" style="float: right;margin-right: 20px;margin-top: -50px">
+           <span style="">
+        <img src="../../pages/MSite/images/test1.png" style="width: 90px;height: 90px" />
+      </span>
+          </div>
+         <div style="font-size: 10px;margin-top: 40px;margin-left: 20px;color: #999">
+           <span>08/21</span>
+           <span>14:58</span>
+           <span>阅读132</span>
+           <span>评论25</span>
+           <span>喜欢56</span>
+         </div>
+        </div>
+        <div style="border: .2px solid #ddd;text-align: left;margin-top: 20px">
+        </div>
+
+        </div>
+
+        <div >
+          <div style="margin-top: 25px;margin-left: 25px">
+            <span style="color:#2894FF;font-size: 12px;background-color: #97CBFF">效能管理</span>
+          </div>
+          <div >
+            <span style="display:block;line-height:25px;margin-top: 12px;margin-left: 25px">"收到，是一种尊重"</span>
+            <div  style="float: right;margin-right: 20px;margin-top: -50px">
+           <span style="">
+        <img src="../../pages/MSite/images/test2.jpeg" style="width: 90px;height: 90px" />
+      </span>
+            </div>
+            <div style="font-size: 10px;margin-top: 40px;margin-left: 20px;color: #999">
+              <span>08/21</span>
+              <span>14:58</span>
+              <span>阅读132</span>
+              <span>评论25</span>
+              <span>喜欢56</span>
+            </div>
+          </div>
+          <div style="border: .5px solid #ddd;text-align: left;margin-top: 20px">
+          </div>
+
+        </div>
+
+        <div >
+          <div style="margin-top: 25px;margin-left: 25px">
+            <span style="color:#2894FF;font-size: 12px;background-color: #97CBFF">卓越品质</span>
+          </div>
+          <div >
+            <span style="display:block;line-height:25px;margin-top: 12px;margin-left: 25px;width: 220px">如果天生没有什么运气，那只能坚持这十个习惯</span>
+            <div  style="float: right;margin-right: 20px;margin-top: -50px">
+           <span style="">
+        <img src="../../pages/MSite/images/test3.jpeg" style="width: 90px;height: 90px" />
+      </span>
+            </div>
+            <div style="font-size: 10px;margin-top: 40px;margin-left: 20px;color: #999">
+              <span>08/21</span>
+              <span>14:58</span>
+              <span>阅读132</span>
+              <span>评论25</span>
+              <span>喜欢56</span>
+            </div>
+          </div>
+          <div style="border: .5px solid #ddd;text-align: left;margin-top: 20px">
+          </div>
+
+        </div>
+
+        <div >
+          <div style="margin-top: 25px;margin-left: 25px">
+            <span style="color:#66FFFF;font-size: 12px;background-color: #CCCC66">阳光美文</span>
+          </div>
+          <div >
+            <span style="display:block;line-height:25px;margin-top: 12px;margin-left: 25px;width: 220px">90后25了，意味着再也得不到来自年龄的宽容</span>
+            <div  style="float: right;margin-right: 20px;margin-top: -50px">
+           <span style="">
+        <img src="../../pages/MSite/images/test4.jpeg" style="width: 90px;height: 90px" />
+      </span>
+            </div>
+            <div style="font-size: 10px;margin-top: 40px;margin-left: 20px;color: #999">
+              <span>08/21</span>
+              <span>14:58</span>
+              <span>阅读132</span>
+              <span>评论25</span>
+              <span>喜欢56</span>
+            </div>
+          </div>
+          <div style="border: .5px solid #ddd;text-align: left;margin-top: 20px">
+          </div>
+
+        </div>
+      </mt-tab-container-item>
+
+    </mt-tab-container>
   </div>
 </template>
-
 <script>
-  import BScroll from 'better-scroll'
-  import {mapState} from 'vuex'
-  import Swiper from 'swiper'
-  import 'swiper/dist/css/swiper.min.css'
-
+  import {mapActions} from 'vuex'
   export default {
     data () {
       return {
-        baseImageUrl: 'https://fuss10.elemecdn.com'
+        scrollWatch: true,
+        swiperOption: {
+          slidesPerView: 'auto',
+          centeredSlides: true,
+          spaceBetween: 30,
+          loop: true
+        },
+        selected: '1',
+        scroll: 0,
+        totop: false,
+        news: [
+          {
+            'id': '1',
+            'avatar': './static/1.png',
+            'name': 'jxh_0709',
+            'time': '12分钟前来过',
+            'price': '￥125.10',
+            'img': './static/01.png',
+            'desc': '小番茄定制2017新款显瘦竖条纹半生裙高腰纽扣开叉雪纺中长款半裙',
+            'add': '来自郑州',
+            'kind': '鱼塘|网红衣服鱼塘',
+            'star': '点赞',
+            'num': '15',
+            'freight': '0'
+          },
+          {
+            'id': '2',
+            'avatar': './static/2.png',
+            'name': '糖果xt90',
+            'time': '1小时前来过',
+            'price': '￥80',
+            'img': './static/02.png',
+            'desc': '买一送一：欧洲力淑女包，感兴趣的给我留言哟',
+            'add': '来自北京',
+            'kind': '鱼塘|给闲置的衣服寻找有缘',
+            'freight': '10'
+          }
+        ],
+        nears: [
+          {
+            'avatar': './static/3.png',
+            'name': '流浪在天际',
+            'time': '7小时前来过',
+            'price': '￥100',
+            'img': './static/03.png',
+            'desc': '席梦思床垫1.8米x2米 95新，换了乳胶，上门自提',
+            'add': '来自南昌',
+            'kind': '鱼塘|塘山镇',
+            'star': '点赞',
+            'num': '2'
+          },
+          {
+            'avatar': './static/4.png',
+            'name': '万莉佳',
+            'time': '8小时前来过',
+            'price': '￥80',
+            'img': './static/04.png',
+            'desc': '绑带细跟真皮凉鞋，清鞋柜，300多买来的，穿过两次，9.5新，34码，鞋跟10厘米左右，鞋子多，便宜处理',
+            'add': '来自南昌',
+            'kind': '鱼塘|众鑫城上城'
+          }
+        ],
+        recoms: [
+          {
+            'title': '长江学院鱼塘',
+            'members': 393,
+            'num': 16,
+            'produ': '想要宝贝置顶的可以私聊我',
+            'destance': 291,
+            'images':
+              [
+                {'img': './static/img1.png'},
+                {'img': './static/img2.png'},
+                {'img': './static/img3.png'}
+              ]
+          },
+          {
+            'title': '华瑞锦城鱼塘',
+            'members': 60,
+            'num': 3,
+            'produ': '[专治各种疑问]鱼塘是什么？',
+            'destance': 319,
+            'images':
+              [
+                {'img': './static/img4.png'},
+                {'img': './static/img5.png'},
+                {'img': './static/img6.png'}
+              ]
+
+          },
+          {
+            'title': '范家新村鱼塘',
+            'members': 91,
+            'num': 6,
+            'produ': '想要宝贝置顶的可以私聊我',
+            'destance': 418,
+            'images':
+              [
+                {'img': './static/img7.png'},
+                {'img': './static/img8.png'},
+                {'img': './static/img9.png'}
+              ]
+
+          }
+        ]
+
       }
     },
-    mounted () {
-
-      this.$store.dispatch('getCategorys')
-      this.$store.dispatch('getShops')
-    },
-
-    computed: {
-
-    },
-
     watch: {
-      categorys (value) { // categorys数组中有数据了, 在异步更新界面之前执行
-        // 使用setTimeout可以实现效果, 但不是太好
-        /*setTimeout(() => {
-          // 创建一个Swiper实例对象, 来实现轮播
-          new Swiper('.swiper-container', {
-            loop: true, // 可以循环轮播
-            // 如果需要分页器
-            pagination: {
-              el: '.swiper-pagination',
-            },
-          })
-        }, 100)*/
-
-        // 界面更新就立即创建Swiper对象
-        this.$nextTick(() => {// 一旦完成界面更新, 立即调用(此条语句要写在数据更新之后)
-          // 创建一个Swiper实例对象, 来实现轮播
-          new Swiper('.swiper-container', {
-            loop: true, // 可以循环轮播
-            // 如果需要分页器
-            pagination: {
-              el: '.swiper-pagination',
-            },
-          })
-
-          new BScroll('.miste-content-wrapper', {
-            click: true
-          })
-        })
-
+      selected: function(val) {
+        this.selected = val;
+        console.log(this.selected);
       }
+    },
+    methods: {
+      menu() {
+        var Height= document.querySelector('.news').offsetTop;
+        console.log(Height)
+        console.log(this.scroll)
+        this.scroll = document.body.scrollTop;
+        console.log(this.scroll)
+        if (this.scroll >= Height-65) {
+          this.totop = true
+        }else{
+          this.totop = false
+        }
+      },
+      buygood (event) {
+        // let Hub = new Vue()
+        let id = event.currentTarget.dataset.id
+        console.log(this.news[id-1])
+        this.$store.dispatch('setNews', this.news[id-1])
+        this.$router.push({path: '/buy'})
+      }
+    },
+    mounted() {
+      document.documentElement.scrollTop = document.body.scrollTop = 0
+      window.addEventListener('scroll', this.menu, false)
+    },
+    destroyed () {
+      this.scrollWatch = false;
     }
   }
 </script>
+<style lang="css" scoped>
+  .swiper-slide{
+    width: 20rem;
+    height: auto;
+    background-color: #f7f7f7;
+    padding: 1rem .6rem .6rem .6rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+  .swiper-slide .title{
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: .8rem;
+  }
+  .swiper-slide .info{
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: .8rem;
+  }
+  .swiper-slide .gonggao {
+    border: 1px solid #7dc5eb;
+    font-size: 1.2rem;
+    padding: 0 .4rem;
+    box-sizing: border-box;
+    color: #7dc5eb;
+  }
+  .swiper-slide .desc{
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .swiper-slide .imgbox{
+    margin-top: 1rem;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: .8rem;
+  }
+  .imgbox .display{
+    width: 30%;
+    height: 4.5rem;
+    margin-left: .4rem;
+  }
+  .swiper-slide .addr{
+    border-top: 1px solid #ddd;
+    padding-top: .6rem;
+    text-align: center;
+    color: #000;
+    background-position: 30% 100%;
+    -webkit-background-size: 14px 14px;
+    background-size: 14px 14px;
+  }
+  .swiper-slice .item{
 
-<style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/mixins.styl"
-  .tab
-    height 40px
-    line-height 40px
-    background #fff
-    bottom-border-1px(rgba(7, 17, 27, 0.1))
-    margin-top 10px
-    .tab-item
-      float left
-      width: 25%
-      text-align center
-      font-size 15px
-      color rgb(77, 85, 93)
+    text-decoration: none;
+  }
+  .mint-swipe{
+    height: 200px;
+  }
+  .mint-navbar .mint-tab-item.is-selected {
+    border-bottom: .1rem solid #000000;
+    color: #000000;
+    margin-bottom: -.3rem;
+    height: 12px;
+  }
+  .f10 {
+    font-size: 1.0rem;
+  }
+  .fixed{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .mt-cell{
+    width: 100%;
+    margin-bottom: .8rem;
 
-      a
-        display block
-        position relative
-        &.router-link-active
-          color #00BFFF
-          &::after
-            content ''
-            position absolute
-            left 50%
-            bottom 1px
-            width 60px
-            height 2px
-            transform translateX(-50%)
-            background #00BFFF
+  }
+  .container {
+    margin-top: 1.2rem;
+  }
+  .container-item {
+    width: 100%;
+    box-sizing:border-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  .container-item .head{
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+  }
+  .head .avatar{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+  .head .info{
+    flex:1;
+    margin-left: .8rem;
+  }
+  .head .title {
+    font-size: 1.4rem;
+    color: #000;
+    margin-bottom: .2rem;
+  }
+  .head .time{
+    font-size: 1.2rem;
+    color: #999;
+    padding-left: 1.4rem;
+    background-size: 14px 14px;
+    background-position: 0 87%;
+  }
+  .head .price{
+    margin-right: .4rem;
+    color: red;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+  .imgbox {
+    margin-top: .4rem;
+    width: 22rem;
+    height: 20rem;
+  }
+  .imgbox .show{
+    width: 100%;
+    height: 100%;
+  }
+  .detail{
+    margin-top: .6rem;
+    width: 100%;
+    color: #000;
+    font-weight: 500;
+    font-size: 1.4rem;
+    padding-bottom: .6rem;
+    border-bottom: 1px solid #f3f3f3;
+  }
+  .bottom {
+    margin-top: .8rem;
+    color: #7dc5eb;
+    display: -webkit-flex;
+    display: flex;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: .8rem;
+
+  }
+  .bottom .kind{
+    margin-left: 1rem;
+    flex: 1;
+  }
+  .bottom .star{
+    color: #888;
+  }
 </style>
